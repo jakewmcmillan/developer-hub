@@ -8,4 +8,6 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  return (
+  return ()
+
+  export default Header;
