@@ -19,6 +19,11 @@ const snippetSchema = new Schema({
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
     },
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: 'Category',
+    },
+
     comments: [
       {
         commentText: {
