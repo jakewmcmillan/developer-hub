@@ -51,4 +51,4 @@ const SnippetList = ({
   );
 };
 
-export default snippetList;
+export default SnippetList;
