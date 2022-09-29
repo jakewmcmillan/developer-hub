@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_SNIPPET } from '../../utils/mutations';
-import { QUERY_SNIPPETS, QUERY_ME } from '../../utils/queries';
+import { QUERY_SNIPPET, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
