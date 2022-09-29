@@ -2,8 +2,8 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SnippetsForm from '../components/SnippetsForm';
-import SnippetsList from '../components/SnippetsList';
+import SnippetForm from '../components/SnippetForm';
+import SnippetList from '../components/SnippetList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -39,7 +39,7 @@ const Profile = () => {
                 </h2>
 
                 <div className="col-12 col-md-10 mb-5">
-                    <SnippetsList
+                    <SnippetList
                         snippets={user.snippets}
                         title={`${user.username}'s snippets:`}
                         showtitle={false}
@@ -51,7 +51,7 @@ const Profile = () => {
                         className="col-12 col-md-10 mb-3 p-3"
                         style={{ border: '1px' }}
                     >
-                        <SnippetsForm />
+                        <SnippetForm />
                     </div>
                 )}
             </div>
