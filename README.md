@@ -11,8 +11,10 @@ er created an application to give prospective developers a handy resource to con
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Screen-shots](#Screen-shots)
+- [Technology-used](#Technology-used)
 - [Credits](#credits)
-- [License](#license)
+- [Links](#links)
 
 ## Installation
 
@@ -24,6 +26,32 @@ As a user I open the application, where I can log-in as well as sign-up for the 
 
 -insert screen shots here
 
+## Screen-shots 
+
+
+## Technology-used
+-React
+
+-Apollo-server express
+
+-Bcrypt
+
+-Express
+
+-Graphql
+
+-Json webtoken
+
+-Mongoose
+
+-Nodemon
+
+-Bootstrap
+
+
+
+
+
 ## Credits
 
 Jake Mcmillan: https://github.com/jakewmcmillan
@@ -34,5 +62,9 @@ William Hart: https://github.com/wjimh314
 
 Humberto Rico: 
 
-## License
+## Links
+
+-Heroku:
+
+-Github:
 
