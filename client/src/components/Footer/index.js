@@ -15,18 +15,10 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-          by the Tech Thoughts team.
-        </h4>
+        <p>
+          Questions or comments?  
+          <a href="https://github.com/jakewmcmillan/developer-hub"> Let us know! </a>
+        </p>
       </div>
     </footer>
   );
