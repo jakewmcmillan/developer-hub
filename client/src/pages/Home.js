@@ -4,11 +4,11 @@ import { useQuery } from '@apollo/client';
 import SnippetList from '../components/SnippetList';
 import SnippetForm from '../components/SnippetForm';
 
-import { QUERY_SNIPPET } from '../utils/queries';
+import { QUERY_SNIPPETS } from '../utils/queries';
 
 
 const Home = () => {
-    const { loading, data } = useQuery(QUERY_SNIPPET);
+    const { loading, data } = useQuery(QUERY_SNIPPETS);
     const snippets = data?.snippets || [];
 
 
@@ -24,7 +24,7 @@ const Home = () => {
                     ) : (
                         <SnippetList
 
-                            snippet={snippets}
+                            snippets={snippets}
 
                             title="Snippets:"
                         />
