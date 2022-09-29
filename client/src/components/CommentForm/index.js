@@ -6,7 +6,7 @@ import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const CommentForm = ({ snippetID }) => {
+const CommentForm = ({ snippetId }) => {
     const [commentText, setCommentText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
   
