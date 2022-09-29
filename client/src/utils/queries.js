@@ -40,7 +40,7 @@ export const QUERY_SINGLE_CATEGORY = gql`
   }
 `;
 
-export const QUERY_SNIPPETS = gql`
+export const QUERY_SNIPPET = gql`
   query getSnippets {
     snippets {
       _id
