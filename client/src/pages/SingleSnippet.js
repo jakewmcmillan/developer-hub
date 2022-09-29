@@ -8,7 +8,7 @@ import SnippetForm from '../components/SnippetForm';
 
 import { QUERY_SINGLE_SNIPPET } from '../utils/queries';
 
-const singleSnippet = () => {
+const SingleSnippet = () => {
     const { snippetId } = useParams();
 
     const { loading, data } = useQuery(QUERY_SINGLE_SNIPPET, {
@@ -52,4 +52,4 @@ const singleSnippet = () => {
     );
 };
 
-export default SingleSnippet
+export default SingleSnippet;
