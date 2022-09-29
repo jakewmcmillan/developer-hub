@@ -15,11 +15,11 @@ const SnippetForm = () => {
   const [addSnippet, { error }] = useMutation(ADD_SNIPPET, {
     update(cache, { data: { ADD_SNIPPET } }) {
       try {
-        const { snippets } = cache.readQuery({ query: QUERY_SNIPPETS });
+        const { snippet } = cache.readQuery({ query: QUERY_SNIPPET });
 
         cache.writeQuery({
-          query: QUERY_SNIPPETS,
-          data: { thoughts: [addSnippet, ...snippets] },
+          query: QUERY_SNIPPET,
+          data: { snippet: [addSnippet, ...snippet] },
         });
       } catch (e) {
         console.error(e);
@@ -79,9 +79,9 @@ const SnippetForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
+                name="snippetText"
+                placeholder="Here's a new snippet..."
+                value={snippetText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}

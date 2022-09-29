@@ -1,10 +1,10 @@
-import React from 'React';
+import React from 'react';
 
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SnippetList from '../components/SnippetList';
-import SnippetForm from '../components/SnippetForm';
+import SnippetList from '../components/SnippetForm/index.js';
+import SnippetForm from '../components/SnippetForm/index.js';
 
 import { QUERY_SINGLE_SNIPPET } from '../utils/queries';
 
@@ -15,7 +15,7 @@ const SingleSnippet = () => {
         variables: { snippetId: snippetId}
     });
 
-    const snippet = data?.thought || {};
+    const snippet = data?.snippet || {};
 
     if (loading) {
         return <div>Loading...</div>
@@ -43,10 +43,10 @@ const SingleSnippet = () => {
             </div>
 
             <div className="my-5">
-                <SnippetsList snippets={snippet.comments} />
+                <SnippetList snippets={snippet.comments} />
             </div>
             <div className="m-3 p-4" style={{ border: '1px' }}>
-                <SnippetsForm snippetId={snippet._id} />
+                <SnippetForm snippetId={snippet._id} />
             </div>
         </div>
     );
