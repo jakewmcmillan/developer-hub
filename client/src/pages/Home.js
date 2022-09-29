@@ -1,25 +1,26 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
 
-import SnippetsList from '../components/SnippetsList';
-import SnippetsForm from '../components/SnippetsForm';
+import SnippetList from '../components/SnippetList';
+import SnippetForm from '../components/SnippetForm';
 
-import { QUERY_THOUGHTS } from '../../utils/queries';
+import { QUERY_SNIPPETS } from '../../utils/queries';
 
 const Home = () => {
-    const { loading, data } = useQuery(QUERY_THOUGHTS);
-    const thoughts = data?.snippets || [];
+    const { loading, data } = useQuery(QUERY_SNIPPETS);
+    const snippets = data?.snippets || [];
 
     return (
         <main>
             <div className="flex-row justify-center">
                 <div className="col-12 col-md-10 mb-3 p-3">
-                    <SnippetsForm />
+                    <SnippetForm />
                 </div>
                 <div className="col-12 col-md-10 mb-3 p-3">
                     {loading ? (
                         <div>Loading Snippets...</div>
                     ) : (
-                        <SnippetsList
+                        <SnippetList
                             snippets={snippets}
                             title="Snippets:"
                         />
