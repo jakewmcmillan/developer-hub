@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_SNIPPET } from '../../utils/mutations';
-import { QUERY_SNIPPET, QUERY_ME } from '../../utils/queries';
+import { QUERY_SNIPPETS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -79,9 +79,9 @@ const SnippetForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
+                name="snippetText"
+                placeholder="Here's a new snippet..."
+                value={snippetText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}

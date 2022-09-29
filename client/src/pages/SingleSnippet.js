@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -43,10 +43,10 @@ const SingleSnippet = () => {
             </div>
 
             <div className="my-5">
-                <SnippetsList snippets={snippet.comments} />
+                <SnippetList snippets={snippet.comments} />
             </div>
             <div className="m-3 p-4" style={{ border: '1px' }}>
-                <SnippetsForm snippetId={snippet._id} />
+                <SnippetForm snippetId={snippet._id} />
             </div>
         </div>
     );
