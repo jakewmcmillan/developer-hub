@@ -56,10 +56,11 @@ const resolvers = {
         },
         addSnippet: async (parent, { snippetText, category }, context) => {
             if (context.user) {
+                const {_id} = await Category.findOne({categoryName: category});
                 const snippet = await Snippet.create({
                     snippetText,
                     snippetAuthor: context.user.username,
-                    category,
+                    category: _id
                 });
 
                 await User.findOneAndUpdate(
