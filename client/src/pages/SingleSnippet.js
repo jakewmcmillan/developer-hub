@@ -3,8 +3,8 @@ import React from 'React';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SnippetsList from '../components/SnippetsList';
-import SnippetsForm from '../components/SnippetsForm';
+import SnippetList from '../components/SnippetList';
+import SnippetForm from '../components/SnippetForm';
 
 import { QUERY_SINGLE_SNIPPET } from '../utils/queries';
 
