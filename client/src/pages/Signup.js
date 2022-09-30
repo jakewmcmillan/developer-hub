@@ -43,7 +43,7 @@ const Signup = () => {
         <main className="flex-row justify-center mb-4">
         <div className="col-12 col-lg-10">
             <div className="card">
-                <h4 className="card-header p-2">Login</h4>
+                <h4 className="card-header p-2">Signup</h4>
                 <div className="card-body">
                     {data ? (
                         <p>Success! {' '}
@@ -61,7 +61,15 @@ const Signup = () => {
                             />
                             <input
                                 className="form-input"
-                                placeholders="******"
+                                placeholders="username"
+                                name="username"
+                                type="username"
+                                value={formState.username}
+                                onChange={handleChange}
+                            />
+                            <input
+                                className="form-input"
+                                placeholders="password"
                                 name="password"
                                 type="password"
                                 value={formState.password}
