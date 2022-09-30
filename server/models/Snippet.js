@@ -6,7 +6,6 @@ const snippetSchema = new Schema({
       type: String,
       required: 'Your code needs more code!',
       minlength: 1,
-      maxlength: 500,
       trim: true,
     },
     snippetAuthor: {
