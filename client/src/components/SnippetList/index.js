@@ -40,7 +40,7 @@ const SnippetList = ({
               <code>{snippet.snippetText}</code>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-primary btn-block btn-round"
               to={`/snippets/${snippet._id}`}
             >
               Have something to say about this snippet?
