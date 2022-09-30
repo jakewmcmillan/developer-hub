@@ -43,7 +43,7 @@ const Login = (props) => {
                     <div className="card-body">
                         {data ? (
                             <p>Success! {' '}
-                                <link to="/">Go back to the homepage.</link>
+                                <Link to="/">Go back to the homepage.</Link>
                             </p>
                         ) : (
                             <form onSubmit={handleFormSubmit}>
