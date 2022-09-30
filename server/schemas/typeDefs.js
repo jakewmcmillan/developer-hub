@@ -28,7 +28,7 @@ const typeDefs = gql`
 type Category {
     _id: ID
     categoryName: String
-    snippets: [Snippet]
+    snippets: [Snippet]!
 }
 
   type Auth {
