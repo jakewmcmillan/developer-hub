@@ -3,9 +3,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SnippetList from '../components/SnippetForm/index.js';
-import SnippetForm from '../components/SnippetForm/index.js';
-
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
@@ -14,7 +11,9 @@ import { QUERY_SINGLE_SNIPPET } from '../utils/queries';
 const SingleSnippet = () => {
     const { snippetId } = useParams();
 
-    const { loading, data } = useQuery(QUERY_SINGLE_SNIPPET, {
+    console.log(snippetId);
+
+    const { loading, data, error } = useQuery(QUERY_SINGLE_SNIPPET, {
         variables: { snippetId: snippetId}
     });
 
@@ -22,6 +21,9 @@ const SingleSnippet = () => {
 
     if (loading) {
         return <div>Loading...</div>
+    }
+    if (error) {
+        console.log(error)
     }
     return (
         <div className="my-3">
