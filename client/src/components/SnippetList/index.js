@@ -25,13 +25,13 @@ const SnippetList = ({
                 >
                   {snippet.snippets} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {snippet.createdAt}
+                    created this snippet on {snippet.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {snippet.createdAt}
+                    You created this snippet on {snippet.createdAt}
                   </span>
                 </>
               )}
@@ -43,7 +43,7 @@ const SnippetList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/snippets/${snippet._id}`}
             >
-              Join the discussion on this thought.
+              Have something to say about this snippet?
             </Link>
           </div>
         ))}
