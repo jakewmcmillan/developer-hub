@@ -61,7 +61,7 @@ const Signup = () => {
                             />
                             <input
                                 className="form-input"
-                                placeholders="username"
+                                placeholder="username"
                                 name="username"
                                 type="username"
                                 value={formState.username}
@@ -69,7 +69,7 @@ const Signup = () => {
                             />
                             <input
                                 className="form-input"
-                                placeholders="password"
+                                placeholder="password"
                                 name="password"
                                 type="password"
                                 value={formState.password}
