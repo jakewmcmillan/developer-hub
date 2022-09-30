@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_SNIPPET } from '../../utils/mutations';
-import { QUERY_SNIPPETS, QUERY_ME } from '../../utils/queries';
+import { QUERY_SNIPPET, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -15,11 +15,11 @@ const SnippetForm = () => {
   const [addSnippet, { error }] = useMutation(ADD_SNIPPET, {
     update(cache, { data: { ADD_SNIPPET } }) {
       try {
-        const { snippets } = cache.readQuery({ query: QUERY_SNIPPETS });
+        const { snippet } = cache.readQuery({ query: QUERY_SNIPPET });
 
         cache.writeQuery({
-          query: QUERY_SNIPPETS,
-          data: { thoughts: [addSnippet, ...snippets] },
+          query: QUERY_SNIPPET,
+          data: { snippet: [addSnippet, ...snippet] },
         });
       } catch (e) {
         console.error(e);
@@ -62,7 +62,7 @@ const SnippetForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Share your snippets</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -102,7 +102,7 @@ const SnippetForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share your snippets. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
