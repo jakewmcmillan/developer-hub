@@ -56,24 +56,3 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const REMOVE_SNIPPET = gql`
-  mutation removeSnippet($snippetId: ID!) {
-    removeSnippet($snippetId: ID!) {
-      _id
-      snippetText
-      snippetAuthor
-      createdAt
-      category
-      comments {
-        _id
-        commentText
-      }
-    }
-  }
-`;
-
-export const REMOVE_COMMENT = gql`
-  mutation removeComment($snippetId: ID!, commentId: ID!) {
-    removeComment($)
-  }
-`;
