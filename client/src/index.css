@@ -433,6 +433,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.css-fix {
+  white-space: pre-wrap; /* or pre-line */
+}
+
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
   width: 100%;

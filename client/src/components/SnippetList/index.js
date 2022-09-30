@@ -25,7 +25,7 @@ const SnippetList = ({
                 >
                   {snippet.snippets} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {snippet.createdAt}
+                  {snippet.snippetAuthor}  had this thought on {snippet.createdAt}
                   </span>
                 </Link>
               ) : (
@@ -36,8 +36,8 @@ const SnippetList = ({
                 </>
               )}
             </h4>
-            <div className="card-body bg-light p-2">
-              <p>{snippet.snippetText}</p>
+            <div className="card-body bg-light p-2 css-fix">
+              <code>{snippet.snippetText}</code>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
