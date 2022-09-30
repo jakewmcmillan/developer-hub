@@ -10,9 +10,9 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username }).populate('snippets');
         },
-        snippets: async (parent, { username, categoryName }) => {
-            const params = [username, categoryName] ? { username, categoryName } : {};
-            return Snippet.find(params).sort({ createdAt: -1 });
+        snippets: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return await Snippet.find(params).populate('category').sort({ createdAt: -1 });
         },
         snippet: async (parent, { snippetId }) => {
             return Snippet.findOne({ _id: snippetId });
