@@ -15,6 +15,7 @@ import SingleSnippet from './pages/SingleSnippet';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CategoryPage from './pages/CategoryPage';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -71,6 +72,10 @@ function App() {
               <Route 
                 path="/snippets/:snippetId"
                 element={<SingleSnippet />}
+              />
+              <Route
+              path="/categories/:categoryId"
+              element={<CategoryPage />}
               />
             </Routes>
           </div>

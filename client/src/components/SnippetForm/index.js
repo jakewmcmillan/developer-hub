@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import { ADD_SNIPPET } from '../../utils/mutations';
-import { QUERY_SNIPPET, QUERY_ME } from '../../utils/queries';
+import { QUERY_SNIPPET, QUERY_ME, QUERY_CATEGORIES } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -11,7 +11,7 @@ const SnippetForm = () => {
   const [snippetText, setSnippetText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
-
+  const {data:catData, error:catError, loading:catLoading} = useQuery(QUERY_CATEGORIES)
   const [addSnippet, { error }] = useMutation(ADD_SNIPPET, {
     update(cache, { data: { ADD_SNIPPET } }) {
       try {
@@ -33,6 +33,8 @@ const SnippetForm = () => {
       });
     },
   });
+
+   if (catData) {console.log(catData)}
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
