@@ -14,6 +14,7 @@ const typeDefs = gql`
     snippetText: String
     snippetAuthor: String
     createdAt: String
+    category: Category 
     comments: [Comment]!
   }
 
@@ -26,8 +27,8 @@ const typeDefs = gql`
 
 type Category {
     _id: ID
-    categoryName
-    snippets: [Snippet]!
+    categoryName: String
+    snippets: [Snippet]
 }
 
   type Auth {
@@ -40,7 +41,7 @@ type Category {
     user(username: String!): User
     snippets(username: String): [Snippet]
     snippet(snippetId: ID!): Snippet
-    categories: [category]
+    categories: [Category]
     category(categoryName: String!): Category
     me: User
   }
