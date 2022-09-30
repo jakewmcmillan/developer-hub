@@ -6,6 +6,9 @@ import { useQuery } from '@apollo/client';
 import SnippetList from '../components/SnippetForm/index.js';
 import SnippetForm from '../components/SnippetForm/index.js';
 
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
+
 import { QUERY_SINGLE_SNIPPET } from '../utils/queries';
 
 const SingleSnippet = () => {
@@ -43,10 +46,10 @@ const SingleSnippet = () => {
             </div>
 
             <div className="my-5">
-                <SnippetList snippets={snippet.comments} />
+                <CommentList comments={snippet.comments} />
             </div>
             <div className="m-3 p-4" style={{ border: '1px' }}>
-                <SnippetForm snippetId={snippet._id} />
+                <CommentForm snippetId={snippet._id} />
             </div>
         </div>
     );
