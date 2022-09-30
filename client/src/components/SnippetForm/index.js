@@ -54,7 +54,7 @@ const SnippetForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'snippetText' && value.length <= 280) {
+    if (name === 'snippetText' && value.length <= 2000) {
       setSnippetText(value);
       setCharacterCount(value.length);
     }
@@ -68,10 +68,10 @@ const SnippetForm = () => {
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
+              characterCount === 2000 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/280
+            Character Count: {characterCount}/2000
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
