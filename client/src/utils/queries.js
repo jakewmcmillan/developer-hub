@@ -58,7 +58,9 @@ export const QUERY_SINGLE_SNIPPET = gql`
       snippetText
       snippetAuthor
       createdAt
-      category
+      category {
+        categoryName
+      }
       comments {
         _id
         commentText
