@@ -57,7 +57,7 @@ const Login = (props) => {
                                 />
                                 <input
                                     className="form-input"
-                                    placeholders="******"
+                                    placeholders="password"
                                     name="password"
                                     type="password"
                                     value={formState.password}
