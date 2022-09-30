@@ -426,6 +426,7 @@ button {
 a {
   color: #1b89bc;
   text-decoration: none;
+  text-align: end;
 }
 
 a:hover {
@@ -465,7 +466,7 @@ a:hover {
 /* MARGIN/PADDING UTILS */
 /* Margin - all sides */
 .m-0 {
-  margin: 0 !important;
+  margin: -8px !important;
 }
 
 .m-1 {
@@ -927,6 +928,8 @@ a:hover {
 /* BACKGROUND UTILS */
 .bg-primary {
   background-color: #3e625b !important;
+  border-radius: 25px;
+  border-color:#000000;
 }
 
 .bg-info {
@@ -1000,8 +1003,10 @@ a:hover {
   background-color: #cecece;
 }
 
-.btn.btn-squared {
-  border-radius: 0;
+.btn.btn-.rounded-lg {
+  border-radius: 45px;
+  border: 10px;
+  border-color:#065b83;
 }
 
 .btn.btn-sm {
@@ -1041,6 +1046,8 @@ a:hover {
 .btn.btn-info {
   background-color: #bebca2;
   color: #3E625B;
+  border:#2d3e50 7px;
+  border-top-style:outset;
 }
 
 .btn.btn-info:hover {
@@ -1050,6 +1057,9 @@ a:hover {
 .btn.btn-light {
   background-color: #bebca2;
   color: #3e625b;
+  border:#2d3e50 7px;
+  border-top-style:outset;
+  
 }
 
 .btn.btn-light:hover {
@@ -1093,15 +1103,16 @@ a:hover {
 }
 
 .card {
-  border: 18px solid #2d3e50;
-  margin-bottom: 1rem;
-  border-radius:5%;
+  border: 0px solid #2d3e50;
+  margin-bottom: 10rem;
+  border-radius:30%;
 }
 
 .card .card-header {
   padding: 0.375rem;
   background-color: #3E625B;
   color: #bebca2;
+
 }
 
 .card .card-body {
