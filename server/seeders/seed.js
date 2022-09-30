@@ -243,11 +243,10 @@ themeSwitcher.addEventListener('click', function () {
         "category": categories[2]._id
       },
       ]
-      console.log(snippetSeeds)
+      // console.log(snippetSeeds)
       for (let i = 0; i < snippetSeeds.length; i++) {
         let snippet = await Snippet.create(snippetSeeds[i]);
-        // snippet.category = categories[0]._id;
-        console.log(snippet, "message");
+        // console.log(snippet, "message");
         const user = await User.findOneAndUpdate(
           { username: snippet.snippetAuthor },
           {
@@ -256,7 +255,21 @@ themeSwitcher.addEventListener('click', function () {
             },
           }
         );
-      }
+          for (let i = 0; i < categories.length; i++) {
+
+            const category = categories[i];
+            console.log(category);
+            console.log(snippet.category);
+            if (snippet.category === category._id) {
+              const newCat = await Category.findOneAndUpdate({_id: category._id}, {
+                $addToSet: {
+                  snippets: snippet._id,
+                },
+              }) 
+              console.log(newCat);
+            }
+          }
+        }
       // console.log('all done!');
       process.exit(0);
     } catch (err) {

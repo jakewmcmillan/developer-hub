@@ -68,6 +68,11 @@ const resolvers = {
                     { $addToSet: { snippets: snippet._id } }
                 );
 
+                await Category.findOneAndUpdate(
+                    { _id: _id },
+                    { $addToSet: { snippets: snippet._id } }
+                );
+
                 return snippet;
             }
             throw new AuthenticationError('You need to be logged in!');
