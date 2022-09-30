@@ -172,6 +172,76 @@ db.once('open', async () => {
         "snippetAuthor":"Sean",
         "category": categories[1]._id
       },
+      {
+        "snippetText": `
+        for (var i = 0; i < 5; i++) {
+          // This is the block of code that will run each time
+          console.log("This is the current value of i: " + i + ".");
+      };
+        while (i < 10) {
+            text += "The number is " + i;
+            i++;
+          };
+        
+        `,
+        "snippetAuthor":"Sean",
+        "category": categories[2]._id
+      },
+      {
+        "snippetText": `
+        function setTime() {
+          // Sets interval in variable
+          var timerInterval = setInterval(function() {
+            secondsLeft--;
+        
+            if(secondsLeft === 0) {
+              // Stops execution of action at set interval
+              clearInterval(timerInterval);
+              // Calls function to create and append image
+              sendMessage();
+            }
+        
+          }, 1000);
+        }
+        `,
+        "snippetAuthor":"Sean",
+        "category": categories[2]._id
+      },
+      {
+        "snippetText": `
+        // Access toggle switch HTML element
+var themeSwitcher = document.querySelector('#theme-switcher');
+var container = document.querySelector('.container');
+
+// Set default mode to dark
+var mode = 'dark';
+
+// Listen for a click event on toggle switch
+themeSwitcher.addEventListener('click', function () {
+  // If mode is dark, apply light background
+  if (mode === 'dark') {
+    mode = 'light';
+    container.setAttribute('class', 'light');
+  }
+  // If mode is light, apply dark background
+  else {
+    mode = 'dark';
+    container.setAttribute('class', 'dark');
+  }
+});
+
+/* 
+  htmlElement.addEventListener(eventName, function);
+
+  - Replace htmlElement with the element that should respond to the event.
+  - Replace eventName with a string for the type of event. (e.g. "click", "change", "focus", etc.)
+  - Replace function with the function that should be called each time the event occurs.
+*/
+
+        `,
+        "snippetAuthor":"Sean",
+        "category": categories[2]._id
+      },
       ]
       console.log(snippetSeeds)
       for (let i = 0; i < snippetSeeds.length; i++) {
