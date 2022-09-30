@@ -8,7 +8,7 @@ const SnippetList = ({
   showUsername = true,
 }) => {
   if (!snippets.length) {
-    return <h3>No Thoughts Yet</h3>;
+    return <h3>No Snippets Yet</h3>;
   }
 
   return (
