@@ -33,13 +33,13 @@ const CommentForm = ({ snippetId }) => {
     const handleChange = (event) => {
       const { name, value } = event.target;
   
-      if (name === 'commentText' && value.length <= 280) {
+      if (name === 'commentText' && value.length <= 2000) {
         setCommentText(value);
         setCharacterCount(value.length);
       }
     };
     return (<div>
-      <h4>What are your thoughts on this thought?</h4>
+      <h4>What are your thoughts on this snippet?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -48,7 +48,7 @@ const CommentForm = ({ snippetId }) => {
               characterCount === 280 || error ? 'text-danger' : ''
             }`}
           >
-            Character Count: {characterCount}/280
+            Character Count: {characterCount}/2000
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
@@ -75,7 +75,7 @@ const CommentForm = ({ snippetId }) => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share your snippets. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
