@@ -18,6 +18,8 @@ const SnippetList = ({
         snippets.map((snippet) => (
           <div key={snippet._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
+            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+
               {showUsername ? (
                 <Link
                   className="text-light"
@@ -52,3 +54,4 @@ const SnippetList = ({
 };
 
 export default SnippetList;
+

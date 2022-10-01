@@ -949,8 +949,10 @@ a:hover {
 }
 
 .bg-dark {
-  background-color: #2d3e50 !important;
+  background-color: #3E625B !important;
 }
+
+
 
 .bg-white {
   background-color: #ffffff !important;
@@ -1068,7 +1070,7 @@ a:hover {
 }
 
 .btn.btn-dark {
-  background-color: #3E625B;
+  background-color: #2d3e50;
   color: #bebca2;
 }
 
