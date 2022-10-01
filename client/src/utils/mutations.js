@@ -31,6 +31,7 @@ export const ADD_SNIPPET = gql`
       snippetText
       snippetAuthor
       createdAt
+      category
       comments {
         _id
         commentText
@@ -54,4 +55,3 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
-
