@@ -26,8 +26,8 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_SINGLE_CATEGORY = gql`
-  query getSingleCategory($categoryId: ID!) {
-    category(categoryId: $categoryId) {
+  query getSingleCategory($categoryName: String!) {
+    category(categoryName: $categoryName) {
         _id
         categoryName
         snippets {

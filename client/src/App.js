@@ -74,7 +74,7 @@ function App() {
                 element={<SingleSnippet />}
               />
               <Route
-              path="/categories/:categoryId"
+              path="/categories/:categoryName"
               element={<CategoryPage />}
               />
             </Routes>
