@@ -64,7 +64,19 @@ const SnippetForm = () => {
 
   return (
     <div>
-      <h3>Share your snippets</h3>
+      <h3>Share your snippets
+      <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Categories
+  
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">HTML</a>
+    <a class="dropdown-item" href="#">CSS</a>
+    <a class="dropdown-item" href="#">J.S</a>
+  </div>
+  </button>
+</div>
+      </h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -113,3 +125,9 @@ const SnippetForm = () => {
 };
 
 export default SnippetForm;
+
+
+
+
+
+

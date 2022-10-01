@@ -31,6 +31,7 @@ export const ADD_SNIPPET = gql`
       snippetText
       snippetAuthor
       createdAt
+      category
       comments {
         _id
         commentText
