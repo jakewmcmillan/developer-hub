@@ -4,16 +4,17 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import SnippetList from "../components/SnippetList"
+// import SnippetForm from '../components/SnippetForm';
 
-import { QUERY_SINGLE_CATEGORY} from '../utils/queries';
+import { QUERY_SINGLE_CATEGORY } from '../utils/queries';
 
 const CategoryPage = () => {
-    const { categoryId } = useParams();
 
-    console.log(categoryId);
+    const { categoryName: categoryParam } = useParams();
+
 
     const { loading, data, error } = useQuery(QUERY_SINGLE_CATEGORY, {
-        variables: { categoryId: categoryId}
+        variables: { categoryName: categoryParam }
     });
 
     const category = data?.category || {};
@@ -28,15 +29,14 @@ const CategoryPage = () => {
         <div>
             <div className="flex-row justify-center mb-3">
                 <h2 className="col-12 col-md-10 p-3 mb-5">
-                    {category.CategoryName} Snippets.
+                    {category.categoryName} Snippets.
                 </h2>
-
+                {/* <div className="col-12 col-md-10 mb-3 p-3">
+                    <SnippetForm />
+                </div> */}
                 <div className="col-12 col-md-10 mb-5">
                     <SnippetList
                         snippets={category.snippets}
-                        title={`${category} snippets:`}
-                        showtitle={false}
-                        showUsername={false}
                     />
                 </div>
             </div>
