@@ -49,7 +49,7 @@ type Category {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addSnippet(snippetText: String!, category: String!): Snippet
+    addSnippet(snippetText: String!): Snippet
     addComment(snippetId: ID!, commentText: String!): Snippet
     removeSnippet(snippetId: ID!): Snippet
     removeComment(snippetId: ID!, commentId: ID!): Snippet

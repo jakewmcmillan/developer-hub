@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 
 import { ADD_SNIPPET } from '../../utils/mutations';
 import { QUERY_SNIPPET, QUERY_ME, QUERY_CATEGORIES } from '../../utils/queries';
-
+// import { Dropdown, Option } from './Dropdown'
 import Auth from '../../utils/auth';
-
+import categoryParam from '../../pages/CategoryPage'
 const SnippetForm = () => {
   const [snippetText, setSnippetText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
-  const {data:catData, error:catError, loading:catLoading} = useQuery(QUERY_CATEGORIES)
+  const { data: catData, error: catError, loading: catLoading } = useQuery(QUERY_CATEGORIES)
   const [addSnippet, { error }] = useMutation(ADD_SNIPPET, {
     update(cache, { data: { ADD_SNIPPET } }) {
       try {
@@ -34,20 +34,24 @@ const SnippetForm = () => {
     },
   });
 
-   if (catData) {console.log(catData)}
+  // if (catData) { console.log(catData) }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     try {
       const { data } = await addSnippet({
         variables: {
           snippetText,
           snippetAuthor: Auth.getProfile().data.username,
+          category: {
+            categoryName: categoryParam
+          }
         },
       });
 
       setSnippetText('');
+     
     } catch (err) {
       console.error(err);
     }
@@ -64,26 +68,13 @@ const SnippetForm = () => {
 
   return (
     <div>
-      <h3>Share your snippets
-      <div class="dropdown">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Categories
-  
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">HTML</a>
-    <a class="dropdown-item" href="#">CSS</a>
-    <a class="dropdown-item" href="#">J.S</a>
-  </div>
-  </button>
-</div>
-      </h3>
+      <h3>Add a Custom Snippet</h3>
 
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 2000 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 2000 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/2000
           </p>
@@ -91,7 +82,18 @@ const SnippetForm = () => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
+
+
             <div className="col-12 col-lg-9">
+              {/* <Dropdown
+                formLabel="Choose a Category"
+                action="/"
+              >
+                <Option selected value="Click to see options" />
+                <Option value="HTML" />
+                <Option value="CSS" />
+                <Option value="JavaScript" />
+              </Dropdown> */}
               <textarea
                 name="snippetText"
                 placeholder="Here's a new snippet..."
