@@ -1,5 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { REMOVE_SNIPPET } from '../../utils/mutations';
+import {QUERY_SNIPPET, QUERY_ME, QUERY_USER} from '../../utils/queries';
+import { useMutation, useQuery } from '@apollo/client';
+import DeleteSnippet from '../DeleteButton';
+
 
 const SnippetList = ({
   snippets,
@@ -7,6 +12,7 @@ const SnippetList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+  
   if (!snippets.length) {
     return <h3>No Snippets Yet</h3>;
   }
@@ -18,12 +24,10 @@ const SnippetList = ({
         snippets.map((snippet) => (
           <div key={snippet._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-            <Link
-              className="btn btn-primary btn-sm"
-              to={`/snippets/${snippet._id}`}
-            >
-              delete
-            </Link>
+           {/* <DeleteSnippet
+            key={snippet._id}
+            className="btn btn-primary btn-sm"
+           ></DeleteSnippet> */}
 
               {showUsername ? (
                 <Link

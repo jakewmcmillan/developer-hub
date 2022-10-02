@@ -51,7 +51,7 @@ type Category {
     login(email: String!, password: String!): Auth
     addSnippet(snippetText: String!): Snippet
     addComment(snippetId: ID!, commentText: String!): Snippet
-    removeSnippet(snippetId: ID!): Snippet
+    deleteSnippet(id: ID!): Snippet
     removeComment(snippetId: ID!, commentId: ID!): Snippet
   }
 `;
