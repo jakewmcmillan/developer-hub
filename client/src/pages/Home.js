@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import SnippetList from '../components/SnippetList';
-import SnippetForm from '../components/SnippetForm';
+// import SnippetForm from '../components/SnippetForm';
 
 import { QUERY_SNIPPET } from '../utils/queries';
 
@@ -15,9 +15,9 @@ const Home = () => {
     return (
         <main>
             <div className="flex-row justify-center">
-                <div className="col-12 col-md-10 mb-3 p-3">
+                {/* <div className="col-12 col-md-10 mb-3 p-3">
                     <SnippetForm />
-                </div>
+                </div> */}
                 <div className="col-12 col-md-10 mb-3 p-3">
                     {loading ? (
                         <div>Loading Snippets...</div>
