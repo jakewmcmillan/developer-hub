@@ -58,13 +58,26 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-//export const REMOVE_SNIPPET = gql`
- // mutation removeSnippet($snippetId: ID!) {
-   // removeSnippet(snippetId: $snippetId) {
-     // _id
-    //}
-  //}
-//`;
+export const DELETE_SNIPPET = gql`
+  mutation deleteSnippet(
+    $id: ID!
+  ) {
+    deleteSnippet(
+      id: $id
+    ) {
+      _id
+    }
+  }
+`;
+
+
+// export const REMOVE_SNIPPET = gql`
+//  mutation removeSnippet($snippetId: ID!) {
+//    removeSnippet(snippetId: $snippetId) {
+//      _id
+//     }
+//   }
+// `;
 
 //export const REMOVE_COMMENT = gql`
 //   mutation removeComment($snippetId: String!, $commentId: String!) {
