@@ -94,10 +94,10 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        removeSnippet: async (parent, { snippetId }, context) => {
+        deleteSnippet: async (parent, { id }, context) => {
             if (context.user) {
                 const snippet = await Snippet.findOneAndDelete({
-                    _id: snippetId,
+                    _id: id,
                     snippetAuthor: context.user.username,
                 });
 
