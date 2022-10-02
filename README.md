@@ -1,7 +1,7 @@
 # TheBlackBook
 ## Description
 
-er created an application to give prospective developers a handy resource to connect with other established developers and maintain an index of code snippets, terminology, and concepts to quickly reference. user will create a profile and be able to add comments to a selection of various basic topics. we will also give them a way to create their own snippets that other users can leave comments on.
+We created an application to give prospective developers a handy resource to connect with other established developers and maintain an index of code snippets, terminology, and concepts to quickly reference. user will create a profile and be able to add comments to a selection of various basic topics. we will also give them a way to create their own snippets that other users can leave comments on.
 
 - The motivation for this project as being a Bootcamp student was to provide a quick pocket reference for code snippets as well as having the experience to discuss this snippets. 
 
@@ -27,7 +27,7 @@ As a user I open the application, where I can log-in as well as sign-up for the 
 -insert screen shots here
 
 ## Screen-shots 
-![Alt text](developer-hub/images/screenshot1.png "Optional Title")
+![Alt text](developer-hub/images/screenshot1.png)
     
 
 
@@ -62,11 +62,11 @@ Sean dillon: https://github.com/DeviousDoge
 
 William Hart: https://github.com/wjimh314
 
-Humberto Rico: 
+Humberto Rico: https://github.com/Humbertorico
 
 ## Links
 
 -Heroku:
 
--Github:
+-Github: [https://github.com/jakewmcmillan/developer-hub] (https://github.com/jakewmcmillan/developer-hub)
 

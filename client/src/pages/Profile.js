@@ -43,7 +43,8 @@ const Profile = () => {
                 )}
             <div className="flex-row justify-center mb-3">
                 <h2 className="col-12 col-md-10 p-3 mb-5">
-                    {userParam ? `${user.username}'s` : "Your"} Profile.
+
+                    {userParam ? `${user.username}'s` : "your"} Profile.
                 </h2>
 
                 <div className="col-12 col-md-10 mb-5">
