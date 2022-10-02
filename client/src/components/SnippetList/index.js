@@ -18,7 +18,12 @@ const SnippetList = ({
         snippets.map((snippet) => (
           <div key={snippet._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+            <Link
+              className="btn btn-primary btn-sm"
+              to={`/snippets/${snippet._id}`}
+            >
+              delete
+            </Link>
 
               {showUsername ? (
                 <Link

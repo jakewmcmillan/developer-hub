@@ -56,16 +56,16 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const REMOVE_SNIPPET = gql`
-  mutation removeSnippet($snippetId: ID!) {
-    removeSnippet(snippetId: $snippetId) {
-      _id
-    }
-  }
-`;
+//export const REMOVE_SNIPPET = gql`
+ // mutation removeSnippet($snippetId: ID!) {
+   // removeSnippet(snippetId: $snippetId) {
+     // _id
+    //}
+  //}
+//`;
 
-// export const REMOVE_COMMENT = gql`
-//   mutation removeComment($snippetId: ID!, $commentId: ID!) {
+//export const REMOVE_COMMENT = gql`
+//   mutation removeComment($snippetId: String!, $commentId: String!) {
 //     removeComment(snippetId: $snippetId, commentId: $commentId) {
 //       _id
 //       snippetText
