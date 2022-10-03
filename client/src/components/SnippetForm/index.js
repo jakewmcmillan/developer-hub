@@ -68,7 +68,7 @@ const SnippetForm = () => {
 
   return (
     <div>
-      <h3>Add a Custom Snippet</h3>
+      <h3>Create an entry to BlackBook</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -96,7 +96,7 @@ const SnippetForm = () => {
               </Dropdown> */}
               <textarea
                 name="snippetText"
-                placeholder="Here's a new snippet..."
+                placeholder="New Snippet, Question, Suggestion, Tech Related Concern..."
                 value={snippetText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
