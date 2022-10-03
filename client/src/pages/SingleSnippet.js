@@ -35,7 +35,7 @@ const SingleSnippet = () => {
             </h3>
             <div className="py-4">
                 <blockquote
-                    className="p-4"
+                    className="p-4 css-fix"
                     style={{
                         fontSize: '1.5rem',
                         fontStyle: 'italic',

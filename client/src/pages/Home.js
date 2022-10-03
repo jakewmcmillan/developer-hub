@@ -26,7 +26,7 @@ const Home = () => {
 
                             snippets={snippets}
 
-                            title="Snippets:"
+                            title="BlackBook Feed:"
                         />
                     )}
                 </div>
